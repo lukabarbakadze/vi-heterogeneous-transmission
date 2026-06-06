@@ -91,8 +91,14 @@ to this.
 
 ## Citation
 
-If you use this code, please cite the thesis and the underlying data
-sources:
+If you use this code, please cite the thesis (see `CITATION.cff`, or the
+"Cite this repository" button on GitHub):
+
+> Barbakadze, L. (2026). *Vertical Integration and the Heterogeneous
+> Transmission of Monetary Policy* (Master's thesis). International School
+> of Economics at TSU (ISET).
+
+and the underlying data sources:
 
 - Hoberg, G., & Phillips, G. (2016). Text-based network industries and
   endogenous product differentiation. *JPE*, 124(5), 1423-1465.

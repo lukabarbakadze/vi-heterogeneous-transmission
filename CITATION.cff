@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "If you use this code, please cite the thesis below."
+title: "Replication package: Vertical Integration and the Heterogeneous Transmission of Monetary Policy"
+authors:
+  - family-names: Barbakadze
+    given-names: Luka
+repository-code: "https://github.com/lukabarbakadze/vi-heterogeneous-transmission"
+license: MIT
+preferred-citation:
+  type: thesis
+  title: "Vertical Integration and the Heterogeneous Transmission of Monetary Policy"
+  authors:
+    - family-names: Barbakadze
+      given-names: Luka
+  institution:
+    name: "International School of Economics at TSU (ISET)"
+  year: 2026
+  thesis-type: "Master's thesis"
