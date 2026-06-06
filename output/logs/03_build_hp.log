@@ -1,0 +1,15 @@
+============================================================
+Stage 1c: Hoberg-Phillips firm-year panel
+============================================================
+Scanning vertical network for firm-year universe...
+  vertical network: 127,904 firm-years
+Scanning TNIC3 network for firm-year universe...
+  TNIC3 network: 161,428 firm-years
+Combined firm-year universe: 168,971
+Loading firm-level HP measures...
+  VertInteg: 184,645 rows
+
+HP firm panel: 168,971 firm-years, 17,744 firms, years 1988-2019
+  with vertinteg: 165,552
+
+Saved: data/processed/hp_firm_panel.parquet

@@ -1,0 +1,203 @@
+============================================================
+BASELINE VI x MPS (Table 2) + ROBUSTNESS (Table 3, cols 1-5)
+============================================================
+
+Data: 96569 obs, 10660 firms, 59 sectors, years 1990-2019
+
+--- (1) Firm + Sector x Year FE (preferred; MPS absorbed) ---
+NOTES: 5 observations removed because of NA values (RHS: 5).
+       1,231/49 fixed-effect singletons were removed (1,280 observations).
+--- (2) Firm + Sector FE + MPS ---
+NOTES: 5 observations removed because of NA values (RHS: 5).
+       1,230/0 fixed-effect singletons were removed (1,230 observations).
+--- (3) Firm FE + MPS ---
+NOTES: 5 observations removed because of NA values (RHS: 5).
+       1,230 fixed-effect singletons were removed (1,230 observations).
+--- (4) Firm + Year + Sector FE (MPS absorbed) ---
+NOTES: 5 observations removed because of NA values (RHS: 5).
+       1,230/0/0 fixed-effect singletons were removed (1,230 observations).
+
+TABLE 2:
+=======
+
+                              m1               m2               m3
+                     Firm+SecxYr     Firm+Sec+MPS         Firm+MPS
+Dependent Var.:      sale_growth      sale_growth      sale_growth
+                                                                  
+mps_x_vi               7.377***         2.963*           2.963*   
+                      (1.362)          (1.172)          (1.171)   
+vi_lag                 1.264***         0.6817*          0.6817*  
+                      (0.2956)         (0.2688)         (0.2687)  
+log_size_lag          -0.2610***       -0.2410***       -0.2410***
+                      (0.0099)         (0.0113)         (0.0113)  
+leverage_lag           0.0473***        0.0501***        0.0501***
+                      (0.0069)         (0.0067)         (0.0067)  
+log_ppent_lag          0.0975***        0.0921***        0.0921***
+                      (0.0065)         (0.0071)         (0.0071)  
+log_cash_lag           0.0276***        0.0345***        0.0345***
+                      (0.0019)         (0.0022)         (0.0022)  
+mps_orth                                0.2146**         0.2146** 
+                                       (0.0633)         (0.0632)  
+Fixed-Effects:       -----------      -----------      -----------
+gvkey                        Yes              Yes              Yes
+sic2-year                    Yes               No               No
+sic2                          No              Yes               No
+year                          No               No               No
+_______________      ___________      ___________      ___________
+S.E.: Clustered by: gvkey & year by: gvkey & year by: gvkey & year
+Observations              95,284           95,334           95,334
+R2                       0.31000          0.27048          0.27048
+
+                              m4
+                     Firm+Yr+Sec
+Dependent Var.:      sale_growth
+                                
+mps_x_vi               6.599*** 
+                      (1.328)   
+vi_lag                 1.222*** 
+                      (0.2879)  
+log_size_lag          -0.2546***
+                      (0.0100)  
+leverage_lag           0.0481***
+                      (0.0068)  
+log_ppent_lag          0.0935***
+                      (0.0068)  
+log_cash_lag           0.0270***
+                      (0.0020)  
+mps_orth                        
+                                
+Fixed-Effects:       -----------
+gvkey                        Yes
+sic2-year                     No
+sic2                         Yes
+year                         Yes
+_______________      ___________
+S.E.: Clustered by: gvkey & year
+Observations              95,334
+R2                       0.28357
+---
+Signif. codes: 0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Saved: output/tables/table2_baseline.csv
+
+============================================================
+TABLE 3 (1): Within-firm VI variation
+============================================================
+
+NOTES: 5 observations removed because of NA values (RHS: 5).
+       1,231/49 fixed-effect singletons were removed (1,280 observations).
+OLS estimation, Dep. Var.: sale_growth
+Observations: 95,284
+Fixed-effects: gvkey: 9,426,  sic2^year: 1,663
+Standard-errors: Clustered (gvkey & year) 
+                 Estimate Std. Error    t value   Pr(>|t|)    
+mps_x_vi_within  0.767665   2.079708   0.369121 7.1472e-01    
+vi_within        1.130765   0.268002   4.219240 2.1994e-04 ***
+log_size_lag    -0.261147   0.009955 -26.232357  < 2.2e-16 ***
+leverage_lag     0.047270   0.006887   6.863734 1.5371e-07 ***
+log_ppent_lag    0.097623   0.006531  14.947726 3.6754e-15 ***
+log_cash_lag     0.027770   0.001859  14.934841 3.7581e-15 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+RMSE: 0.326006     Adj. R2: 0.218665
+                 Within R2: 0.134607
+
+  Full VI:     gamma = 7.377 (SE = 1.362, t = 5.42)
+  Within-firm: gamma = 0.768 (SE = 2.080, t = 0.37)
+
+============================================================
+TABLE 3 (2): Leverage x MPS horse race
+============================================================
+
+NOTES: 5 observations removed because of NA values (RHS: 5).
+       1,231/49 fixed-effect singletons were removed (1,280 observations).
+OLS estimation, Dep. Var.: sale_growth
+Observations: 95,284
+Fixed-effects: gvkey: 9,426,  sic2^year: 1,663
+Standard-errors: Clustered (gvkey & year) 
+               Estimate Std. Error    t value   Pr(>|t|)    
+mps_x_vi       7.476984   1.431110   5.224604 1.3587e-05 ***
+mps_x_lev     -0.018629   0.033091  -0.562973 5.7778e-01    
+vi_lag         1.265842   0.296740   4.265831 1.9355e-04 ***
+leverage_lag   0.047147   0.006873   6.860156 1.5518e-07 ***
+log_size_lag  -0.260931   0.009929 -26.279442  < 2.2e-16 ***
+log_ppent_lag  0.097514   0.006528  14.937447 3.7412e-15 ***
+log_cash_lag   0.027599   0.001866  14.794574 4.7914e-15 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+RMSE: 0.325916     Adj. R2: 0.219091
+                 Within R2: 0.135089
+
+============================================================
+TABLE 3 (3)-(4): Pre-2008 vs Post-2008
+============================================================
+
+NOTES: 4 observations removed because of NA values (RHS: 4).
+       1,109/27 fixed-effect singletons were removed (1,136 observations).
+NOTES: 1 observation removed because of NA values (RHS: 1).
+       516/22 fixed-effect singletons were removed (538 observations).
+                           m_pre           m_post
+                        Pre-2008        Post-2008
+Dependent Var.:      sale_growth      sale_growth
+                                                 
+mps_x_vi               7.027**         16.75**   
+                      (2.003)          (4.695)   
+vi_lag                 1.475***         0.7484   
+                      (0.3545)         (0.6674)  
+log_size_lag          -0.2934***       -0.4143***
+                      (0.0191)         (0.0344)  
+leverage_lag           0.0400***        0.0482***
+                      (0.0080)         (0.0103)  
+log_ppent_lag          0.0984***        0.1280***
+                      (0.0089)         (0.0173)  
+log_cash_lag           0.0270***        0.0324***
+                      (0.0023)         (0.0051)  
+Fixed-Effects:       -----------      -----------
+gvkey                        Yes              Yes
+sic2-year                    Yes              Yes
+_______________      ___________      ___________
+S.E.: Clustered by: gvkey & year by: gvkey & year
+Observations              64,248           30,642
+R2                       0.33434          0.40400
+---
+Signif. codes: 0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Pre-2008 (conv. MP): gamma = 7.027 (t = 3.51), N = 64248
+Post-2008 (ZLB/QE):  gamma = 16.754 (t = 3.57), N = 30642
+
+============================================================
+TABLE 3 (5): Placebo test (lead MPS)
+============================================================
+
+NOTES: 10,665 observations removed because of NA values (RHS: 10,665).
+       1,117/50 fixed-effect singletons were removed (1,164 observations).
+OLS estimation, Dep. Var.: sale_growth
+Observations: 84,740
+Fixed-effects: gvkey: 8,312,  sic2^year: 1,602
+Standard-errors: Clustered (gvkey & year) 
+               Estimate Std. Error    t value   Pr(>|t|)    
+mps_x_vi_lead  0.872437   1.121810   0.777705 4.4326e-01    
+vi_lag         1.041014   0.271670   3.831907 6.5827e-04 ***
+log_size_lag  -0.261815   0.010034 -26.091946  < 2.2e-16 ***
+leverage_lag   0.048036   0.007650   6.278890 8.6698e-07 ***
+log_ppent_lag  0.093284   0.006447  14.470186 1.5983e-14 ***
+log_cash_lag   0.023884   0.001867  12.795683 3.2277e-13 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+RMSE: 0.314973     Adj. R2: 0.215966
+                 Within R2: 0.136777
+
+Placebo: gamma_lead = 0.872 (t = 0.78)
+
+Saved: output/tables/table3_robustness.csv
+
+============================================================
+SUMMARY
+============================================================
+
+Baseline (Firm+SecxYr):  gamma = 7.377 (SE 1.362, t = 5.42), N = 95284
+Within-firm VI:          gamma = 0.768 (t = 0.37)
+With MPS x Leverage:     gamma = 7.477 (t = 5.22)
+Pre-2008:                gamma = 7.027 (t = 3.51)
+Post-2008:               gamma = 16.754 (t = 3.57)
+Lead placebo:            gamma = 0.872 (t = 0.78)

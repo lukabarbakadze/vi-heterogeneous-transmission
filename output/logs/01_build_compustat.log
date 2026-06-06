@@ -1,0 +1,13 @@
+============================================================
+Stage 1a: Compustat fiscal-year panel
+============================================================
+Loading WRDS quarterly extracts...
+  Main extract: 1,461,274 rows, 176 cols
+  Debt extract: 1,613,538 rows, 49 cols
+  Merged: 1,461,274 rows, 33,367 firms, years 1980-2020
+
+Fiscal-year panel: 376,612 firm-fiscal-years, 33,367 firms
+  Complete (4-quarter) fiscal years: 351,015
+  With a defined fiscal year-end (has_q4): 354,889
+
+Saved: data/processed/compustat_yearly.parquet

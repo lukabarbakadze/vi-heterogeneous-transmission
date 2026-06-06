@@ -1,0 +1,176 @@
+============================================================
+ALTERNATIVE OUTCOMES (Figure 1, Appendix B1, Appendix C.4)
+============================================================
+
+Data: 96564 obs, 10660 firms, 59 sectors, years 1990-2019
+
+--- (1) Sales: sale_growth ---
+NOTE: 1,231/49 fixed-effect singletons were removed (1,280 observations).
+--- (2) Debt: d_log_debt ---
+NOTE: 1,231/49 fixed-effect singletons were removed (1,280 observations).
+--- (3) Leverage: d_leverage ---
+NOTE: 1,231/49 fixed-effect singletons were removed (1,280 observations).
+--- (4) COGS: d_log_cogs ---
+NOTE: 1,231/49 fixed-effect singletons were removed (1,280 observations).
+--- (5) Inventory: d_log_invt ---
+NOTES: 1,463 observations removed because of NA values (LHS: 1,463).
+       1,230/48 fixed-effect singletons were removed (1,277 observations).
+--- (6) Capex: d_log_capex ---
+NOTES: 1,681 observations removed because of NA values (LHS: 1,681).
+       1,242/49 fixed-effect singletons were removed (1,290 observations).
+--- (7) PP&E: d_log_ppent ---
+NOTES: 387 observations removed because of NA values (LHS: 387).
+       1,228/49 fixed-effect singletons were removed (1,276 observations).
+--- (8) Operating income: d_log_oi ---
+NOTE: 1,231/49 fixed-effect singletons were removed (1,280 observations).
+--- (9) Interest expense: d_log_xint ---
+NOTE: 1,231/49 fixed-effect singletons were removed (1,280 observations).
+--- (10) Receivables: d_log_rect ---
+NOTES: 1,092 observations removed because of NA values (LHS: 1,092).
+       1,233/53 fixed-effect singletons were removed (1,285 observations).
+
+RESULTS TABLE (outcomes 1-5):
+
+                     models[[1]]       models[[..     models[[...1
+                           Sales             Debt         Leverage
+Dependent Var.:      sale_growth       d_log_debt       d_leverage
+                                                                  
+mps_x_vi               7.377***         3.225           -1.805    
+                      (1.362)          (2.820)          (1.204)   
+vi_lag                 1.264***         0.4758          -0.2508   
+                      (0.2956)         (0.5024)         (0.3043)  
+log_size_lag          -0.2610***       -0.0880***       -0.0220   
+                      (0.0099)         (0.0098)         (0.0127)  
+leverage_lag           0.0473***       -0.2035***       -0.5463***
+                      (0.0069)         (0.0090)         (0.0214)  
+log_ppent_lag          0.0975***       -0.0258*          0.0152   
+                      (0.0065)         (0.0099)         (0.0110)  
+log_cash_lag           0.0276***        0.0636***        0.0058   
+                      (0.0019)         (0.0051)         (0.0038)  
+Fixed-Effects:       -----------       ----------       ----------
+gvkey                        Yes              Yes              Yes
+sic2-year                    Yes              Yes              Yes
+_______________      ___________       __________       __________
+S.E.: Clustered by: gvkey & year by: gvkey & year by: gvkey & year
+Observations              95,284           95,284           95,284
+R2                       0.31000          0.11910          0.33867
+
+                    models[[...2     models[[...3
+                            COGS        Inventory
+Dependent Var.:       d_log_cogs       d_log_invt
+                                                 
+mps_x_vi               6.556***         4.047*   
+                      (1.228)          (1.859)   
+vi_lag                 0.6317*          0.3507   
+                      (0.2843)         (0.2874)  
+log_size_lag          -0.1400***       -0.0121   
+                      (0.0092)         (0.0063)  
+leverage_lag          -0.0035          -0.0121** 
+                      (0.0059)         (0.0039)  
+log_ppent_lag          0.0453***       -0.0554***
+                      (0.0060)         (0.0063)  
+log_cash_lag           0.0260***        0.0275***
+                      (0.0023)         (0.0025)  
+Fixed-Effects:        ----------       ----------
+gvkey                        Yes              Yes
+sic2-year                    Yes              Yes
+_______________       __________       __________
+S.E.: Clustered by: gvkey & year by: gvkey & year
+Observations              95,284           93,824
+R2                       0.19456          0.15241
+---
+Signif. codes: 0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+RESULTS TABLE (outcomes 6-10):
+
+                     models[[6]]      models[[7]]       models[[..
+                           Capex             PP&E Operating income
+Dependent Var.:      d_log_capex      d_log_ppent         d_log_oi
+                                                                  
+mps_x_vi              11.02*            2.783*          13.37     
+                      (4.565)          (1.184)          (9.242)   
+vi_lag                 2.388***         0.9179***        1.181    
+                      (0.5921)         (0.2480)         (0.8239)  
+log_size_lag           0.1199***        0.1025***       -0.2753***
+                      (0.0100)         (0.0068)         (0.0207)  
+leverage_lag          -0.0060          -0.0111*          0.0315** 
+                      (0.0061)         (0.0041)         (0.0089)  
+log_ppent_lag         -0.3672***       -0.2349***       -0.0095   
+                      (0.0178)         (0.0099)         (0.0169)  
+log_cash_lag           0.0807***        0.0484***       -0.0666***
+                      (0.0042)         (0.0027)         (0.0078)  
+Fixed-Effects:       -----------      -----------       ----------
+gvkey                        Yes              Yes              Yes
+sic2-year                    Yes              Yes              Yes
+_______________      ___________      ___________       __________
+S.E.: Clustered by: gvkey & year by: gvkey & year by: gvkey & year
+Observations              93,593           94,901           95,284
+R2                       0.19072          0.30154          0.11940
+
+                    models[[...1     models[[...2
+                Interest expense      Receivables
+Dependent Var.:       d_log_xint       d_log_rect
+                                                 
+mps_x_vi               6.315            3.970    
+                      (3.327)          (1.967)   
+vi_lag                -0.5800           0.9021** 
+                      (0.7883)         (0.2941)  
+log_size_lag          -0.1194***       -0.0634***
+                      (0.0137)         (0.0078)  
+leverage_lag          -0.0086          -0.0093   
+                      (0.0107)         (0.0052)  
+log_ppent_lag          0.1044***       -0.0415***
+                      (0.0107)         (0.0072)  
+log_cash_lag           0.0033           0.0244***
+                      (0.0078)         (0.0016)  
+Fixed-Effects:        ----------       ----------
+gvkey                        Yes              Yes
+sic2-year                    Yes              Yes
+_______________       __________       __________
+S.E.: Clustered by: gvkey & year by: gvkey & year
+Observations              95,284           94,187
+R2                       0.08190          0.16806
+---
+Signif. codes: 0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Saved: output/tables/alt_outcomes_coefs.csv
+Saved: output/tables/appendix_b1_all_coefficients.csv
+
+SUMMARY: gamma (MPS x VI) per outcome
+| Outcome          |    gamma |     SE |      t |
+|------------------|----------|--------|--------|
+| Sales            |    7.377 |  1.362 |   5.42 |
+| Debt             |    3.225 |  2.820 |   1.14 |
+| Leverage         |   -1.805 |  1.204 |  -1.50 |
+| COGS             |    6.556 |  1.228 |   5.34 |
+| Inventory        |    4.047 |  1.859 |   2.18 |
+| Capex            |   11.023 |  4.565 |   2.41 |
+| PP&E             |    2.783 |  1.184 |   2.35 |
+| Operating income |   13.371 |  9.242 |   1.45 |
+| Interest expense |    6.315 |  3.327 |   1.90 |
+| Receivables      |    3.970 |  1.967 |   2.02 |
+
+============================================================
+APPENDIX C.4: Placebo test (lead MPS) per outcome
+============================================================
+
+| Outcome          | Placebo gamma |      t | Pass? |
+|------------------|---------------|--------|-------|
+NOTES: 10,660 observations removed because of NA values (RHS: 10,660).
+       1,117/50 fixed-effect singletons were removed (1,164 observations).
+| Sales            |          0.87 |   0.78 | Yes   |
+NOTES: 10,660 observations removed because of NA values (RHS: 10,660).
+       1,117/50 fixed-effect singletons were removed (1,164 observations).
+| COGS             |         -0.16 |  -0.13 | Yes   |
+NOTES: 11,739 observations removed because of NA values (LHS: 1,463, RHS: 10,660).
+       1,124/47 fixed-effect singletons were removed (1,169 observations).
+| Inventory        |          4.88 |   3.38 | NO    |
+NOTES: 11,844 observations removed because of NA values (LHS: 1,681, RHS: 10,660).
+       1,124/49 fixed-effect singletons were removed (1,171 observations).
+| Capex            |          3.00 |   1.12 | Yes   |
+NOTES: 10,660 observations removed because of NA values (RHS: 10,660).
+       1,117/50 fixed-effect singletons were removed (1,164 observations).
+| Debt             |         -0.36 |  -0.14 | Yes   |
+
+Placebo passes if NOT significant (|t| < 1.96).
+Saved: output/tables/appendix_c4_lead_placebos.csv

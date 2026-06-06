@@ -1,0 +1,37 @@
+============================================================
+Stage 1d: Analysis panels
+============================================================
+Loading processed inputs...
+  Compustat: 322,361 firm-years, 30,444 firms
+  HP: 168,971 firm-years, 17,744 firms
+  MPS: 36 years (1988-2023)
+
+Merging datasets...
+  Compustat rows: 322,361; with a defined FY-end (has_q4): 303,467
+  MPS assigned (fiscal-year aligned): 299,644 obs (93.0%)
+  After HP merge (VI from year t-1): 164,013 obs
+
+Applying sample filters...
+  After filters: 118,437 obs (dropped 45,576)
+
+Creating variables...
+
+Finalizing samples...
+  panel_baseline: 96,569 obs, 10,660 firms, years 1990-2019
+  panel_outcomes: 96,564 obs, 10,660 firms, years 1990-2019
+
+  panel_outcomes outcome coverage:
+    sale_growth  : 96,564 obs (100.0%)
+    d_log_debt   : 96,564 obs (100.0%)
+    d_leverage   : 96,564 obs (100.0%)
+    d_log_cogs   : 96,564 obs (100.0%)
+    d_log_invt   : 95,101 obs ( 98.5%)
+    d_log_capex  : 94,883 obs ( 98.3%)
+    d_log_ppent  : 96,177 obs ( 99.6%)
+    d_log_oi     : 96,564 obs (100.0%)
+    d_log_xint   : 96,564 obs (100.0%)
+    d_log_rect   : 95,472 obs ( 98.9%)
+
+Saved: data/processed/panel_baseline.parquet / .csv
+
+Saved: data/processed/panel_outcomes.parquet / .csv

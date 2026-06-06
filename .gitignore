@@ -1,0 +1,18 @@
+# Raw data is never committed (see data/raw/*/README.md for how to obtain it).
+# Directories must be un-ignored before files inside them can be un-ignored.
+data/raw/**
+!data/raw/*/
+!data/raw/*/README.md
+
+# Everything derived from the raw data (firm-level; cannot be redistributed)
+data/processed/*
+!data/processed/.gitkeep
+
+# Outputs ARE tracked: logs, coefficient tables, and figures contain only
+# aggregate statistics and model estimates, which the data licenses permit.
+
+# OS / editor noise
+.DS_Store
+*.pyc
+__pycache__/
+.Rhistory

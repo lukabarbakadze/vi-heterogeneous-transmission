@@ -1,0 +1,19 @@
+============================================================
+Stage 1b: Bauer-Swanson MPS, fiscal-year aligned
+============================================================
+Loaded 361 FOMC meetings (1988-2023)
+
+Aggregating to monthly level...
+  432 year-month observations
+
+Creating fiscal-year aligned MPS...
+  36 fiscal years x 12 fiscal-year-end months
+
+Saved: data/processed/mps_monthly.parquet
+Saved: data/processed/mps_fiscal_year.parquet
+
+Sample (2009-2011, Dec / Jun fiscal-year ends):
+ year  mps_fy_dec  mps_fy_jun
+ 2009   -0.010154    0.124617
+ 2010   -0.016213   -0.009111
+ 2011    0.047448   -0.021664
