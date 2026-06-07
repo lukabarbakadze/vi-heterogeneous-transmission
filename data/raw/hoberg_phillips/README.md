@@ -5,6 +5,8 @@ Hoberg-Phillips Data Library:
 
 > https://hobergphillips.tuck.dartmouth.edu
 
+The thesis uses the versions retrieved in February 2026.
+
 Reference papers:
 - Fresard, L., Hoberg, G., & Phillips, G. (2020). Innovation activities and
   integration through vertical acquisitions. *Review of Financial Studies*,

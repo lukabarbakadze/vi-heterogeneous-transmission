@@ -14,15 +14,20 @@ COGS) rather than financing outcomes.
 ## Data availability
 
 No data is included in this repository. Two of the three inputs are freely
-downloadable; the third requires a WRDS subscription.
+downloadable:
 
-| Source | Access | Instructions |
-|---|---|---|
-| Hoberg-Phillips Data Library (VI score, TNIC) | Free, registration | [`data/raw/hoberg_phillips/README.md`](data/raw/hoberg_phillips/README.md) |
-| Bauer-Swanson monetary-policy surprises | Free | [`data/raw/bauer_swanson/README.md`](data/raw/bauer_swanson/README.md) |
-| Compustat quarterly (`comp.fundq`) | WRDS subscription | [`data/raw/wrds/README.md`](data/raw/wrds/README.md) |
+| Source | Access | Where | Accessed | Instructions |
+|---|---|---|---|---|
+| Hoberg-Phillips Data Library (VI score, networks) | Free, registration | [hobergphillips.tuck.dartmouth.edu](https://hobergphillips.tuck.dartmouth.edu) | Feb 2026 | [`data/raw/hoberg_phillips/`](data/raw/hoberg_phillips/README.md) |
+| Bauer-Swanson monetary-policy surprises | Free | [SF Fed data page](https://www.frbsf.org/research-and-insights/data-and-indicators/monetary-policy-surprises/) | Feb 2026 | [`data/raw/bauer_swanson/`](data/raw/bauer_swanson/README.md) |
 
-Place the files as described in the three READMEs, then run the pipeline.
+The firm-level accounting data come from Compustat quarterly (`comp.fundq`),
+accessed through a WRDS subscription;
+[`data/raw/wrds/README.md`](data/raw/wrds/README.md) gives the exact extract
+specification. Access dates matter for exact replication: the data providers
+revise their series over time, so a later vintage can shift observation
+counts slightly. Place the files as described in the three READMEs, then run
+the pipeline.
 
 ## Setup
 
@@ -84,10 +89,10 @@ clustered SEs by firm and year; firm + sector-by-year fixed effects):
 | Lead-MPS placebo gamma | 0.872 (t = 0.78) |
 | Asymmetric (sales): tightening / easing | 6.64 / 7.85, equality p = 0.607 |
 
-Exact reproduction requires the same input vintages (Compustat is restated
-over time; the thesis extract is from January 2025). Small deviations in N
-with a newer extract are expected; the qualitative results are not sensitive
-to this.
+Exact reproduction requires the same input vintages (see the access dates
+in the Data availability table; the Compustat extract is from January
+2026). Small deviations in N with a newer extract are expected; the
+qualitative results are not sensitive to this.
 
 ## Citation
 

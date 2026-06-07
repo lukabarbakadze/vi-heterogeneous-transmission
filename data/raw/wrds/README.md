@@ -35,4 +35,4 @@ After running `make data panels`, the build log should report a baseline
 panel of **96,569** firm-year observations and **10,660** firms
 (`data/processed/panel_baseline.parquet`). If your counts differ slightly,
 the likely cause is a Compustat vintage difference (S&P restates data over
-time); the thesis extract was pulled in January 2025.
+time); the thesis extract was pulled in January 2026.
